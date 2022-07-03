@@ -1,11 +1,13 @@
+import Part from './part'
+
 const Main = () => {
   return (
     <main className="app-main">
-      <section className="section1"></section>
-        <section className="section2"></section>
-        <section className="section3"></section>
-        <section className="section4"></section>
-        <section className="section5"></section>
+      <Part className="section1"></Part>
+      <Part className="section2"></Part>
+      <Part className="section3"></Part>
+      <Part className="section4"></Part>
+      <Part className="section5"></Part>
     </main>
   )
 }
