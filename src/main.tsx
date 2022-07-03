@@ -1,12 +1,12 @@
 import React from 'react'
 import ReactDOM from 'react-dom/client'
 import App from './App'
-import autoAdaptTocreen from './utils/autoAdaptTocreen'
+import autoAdaptScreen from './utils/autoAdaptScreen'
 import './styles/index.scss'
 
 const root = document.getElementById('root')!
 
-autoAdaptTocreen(root)
+autoAdaptScreen(root)
 ReactDOM.createRoot(root).render(
   <React.StrictMode>
     <App />

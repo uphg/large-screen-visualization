@@ -1,10 +1,14 @@
+@use "sass:math";
+
 @function px($n){
-  @return $n / 2420 * 100rem;
-}
+  // @return $n / 2420 * 100rem;
+  @return math.div($n, 2420) * 100rem
+};
 
-// $part-bg: rgba(74, 157, 165, 0.1);
-$part-bg: rgba(255, 255, 255, 0.05);
-// $border-color: rgba(21, 109, 147, 0.4);
+// $part-bg: rgba(22, 107, 147, 0.1);
+$part-bg: rgba(22, 107, 147, 0.05);
+$border-radius: 4px;
+$border-size: 2px;
 $border-color: rgba(4, 197, 223, 0.2);
-
 $primary-border-color: rgba(0, 122, 192);
+$font-color: #d2dcdc;

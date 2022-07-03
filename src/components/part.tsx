@@ -2,7 +2,7 @@ import { PropsWithChildren } from "react"
 import classnames from 'classnames'
 
 
-const Part = (props: PropsWithChildren & { className: string }) => {
+const Part = (props: PropsWithChildren & { className?: string }) => {
   return (
     <section className={classnames(['part', props.className])}>
       {props.children}
