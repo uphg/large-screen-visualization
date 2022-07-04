@@ -1,17 +1,18 @@
 import { useEffect, useRef } from 'react';
 import * as echarts from 'echarts';
-import { withEchartsOptions } from '../utils/withEchartsOptions';
+import { withEchartsOptions, px } from '../utils/echarts';
 
-const chartOptions: echarts.EChartsOption = {
+const getChartOptions: () => echarts.EChartsCoreOption = () => ({
   xAxis: {
-    data: ['山东省', '河北省', '陕西省', '河南省', '北京市', '上海市', '深圳市', '广东省', '杭州市'],
+    data: ['山东', '河北', '陕西', '河南', '北京', '上海', '深圳', '广东', '杭州'],
     axisTick: {
       show: false
     },
     axisLine: {
-      lineStyle: {
-        color: '#083B70'
-      }
+      show: false,
+      // lineStyle: {
+      //   color: '#083B70'
+      // }
     },
     axisLabel: {
       formatter(val: string) {
@@ -26,20 +27,19 @@ const chartOptions: echarts.EChartsOption = {
     },
   },
   yAxis: {
-    splitLine: {
-      show: false
-    },
-    axisLine: {
-      show: true,
-      lineStyle: {
-        color: '#083B70'
-      }
-    }
+    show: false,
+    boundaryGap: false,
   },
   series: [
     {
       type: 'bar',
+      barWidth: px(15),
       data: [20, 12, 42, 35, 16, 36, 22, 28, 16],
+      itemStyle: {
+        normal: {
+          barBorderRadius: [px(7.5), px(7.5), px(7.5), px(7.5)]
+        }
+      },
       color: new echarts.graphic.LinearGradient(0, 0, 0, 1, [
         {
           offset: 0,
@@ -51,7 +51,7 @@ const chartOptions: echarts.EChartsOption = {
       ]),
     }
   ]
-}
+})
 
 const Chart1 = () => {
   const divRef = useRef<HTMLDivElement>(null);
@@ -59,7 +59,7 @@ const Chart1 = () => {
     const currentCharts = echarts.getInstanceByDom(divRef.current!)
     if (currentCharts) return
     var chart = echarts.init(divRef.current!);
-    const options = withEchartsOptions(chartOptions)
+    const options = withEchartsOptions(getChartOptions())
     chart.setOption(options);
   }, []);
 

@@ -1,13 +1,12 @@
 import { EChartsOption } from "echarts";
 
-
 const fontColor = '#d2dcdc'
 
 // @ts-ignore
-const px = (n: number) => n / 2420 * window.pageWidth;
+export const px = (n: number) => n / 2420 * window.pageWidth;
 const getBaseOptions = () => ({
   textStyle: {
-    fontSize: px(12),
+    fontSize: px(16),
     color: fontColor
   },
   title: {
@@ -17,10 +16,11 @@ const getBaseOptions = () => ({
     show: false
   },
   grid: {
-    x: px(20),
-    y: px(20),
-    x2: px(20),
-    y2: px(20),
+    left: 0,
+    x: px(32),
+    y: px(32),
+    x2: px(32),
+    y2: px(32),
     containLabel: true
   },
 })
