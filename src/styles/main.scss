@@ -1,8 +1,5 @@
-// @import "./common.scss";
-
 
 $part-border-size: 1px;
-// px(363);
 .app-main {
   display: grid;
   flex: 1;
@@ -15,9 +12,16 @@ $part-border-size: 1px;
   padding: px(28);
   > .section1 {
     grid-area: box1;
+    .chart {
+      margin: 0 px(-32) px(-32);
+    }
   }
   > .section2 {
     grid-area: box2;
+    .chart {
+      padding-left: px(24);
+      margin-right: px(-24);
+    }
   }
   > .section3 {
     grid-area: box3;
@@ -50,21 +54,69 @@ $part-border-size: 1px;
   border: $part-border-size solid $border-color;
   background-color: $part-bg;
   box-shadow: inset 0 0 10px 10px rgba(17, 106, 134, 0.1);
+  &.right {
+    .total {
+      order: 2;
+      padding-left: 0;
+      padding-right: px(32);
+    }
+
+  }
 
   .part-title {
+    box-sizing: border-box;
     text-align: left;
     color: #19b0d6;
     font-size: px(26);
-    line-height: px(32);
-    padding: 0 px(32);
-    margin-bottom: -1 * px(20);
+    padding: px(32) px(32) 0;
     display: flex;
     align-items: center;
   }
+  .part-content {
+    overflow: hidden;
+    display: flex;
+    flex-grow: 1;
+  }
   .chart {
     width: 100%;
-    flex: 1;
   }
+
+  .total {
+    padding-top: px(32);
+    padding-left: px(32);
+    padding-bottom: px(32);
+    display: flex;
+    flex-direction: column;
+  }
+  .total-item {
+    display: flex;
+    height: 50%;
+    flex-direction: column;
+    font-size: px(18);
+    color: $font-color;
+    .total-header {
+      display: flex;
+      align-items: center;
+    }
+    .square {
+      width: px(15);
+      height: px(15);
+      border-radius: 2px;
+      background: linear-gradient(180deg, rgba(24,209,253,1) 0%, rgba(27,150,246,1) 100%);
+    }
+    .title {
+      padding-left: px(15);
+      white-space: nowrap;
+    }
+    .quantity {
+      padding-top: px(10);
+      padding-left: px(30);
+      text-align: left;
+      font-size: px(36);
+      font-weight: 700;
+    }
+  }
+
   .corner-mark-wrap {
     position: absolute;
     width: px(10);
@@ -111,55 +163,6 @@ $part-border-size: 1px;
         right: 0;
         border-bottom-right-radius: $border-radius;
       }
-    }
-  }
-}
-
-.app-main .part {
-  &.distribution {
-    display: grid;
-    grid-template:
-      "box1 box1" 25fr
-      "box2 box3" 75fr / 30fr 70fr;
-    .part-title {
-      grid-area: box1;
-    }
-    .total {
-      padding-top: px(32);
-      padding-left: px(32);
-      padding-bottom: px(32);
-      grid-area: box2;
-    }
-    .total-item {
-      height: 50%;
-      display: flex;
-      flex-direction: column;
-      font-size: px(18);
-      color: $font-color;
-      .total-header {
-        display: flex;
-        align-items: center;
-      }
-      .square {
-        width: px(15);
-        height: px(15);
-        border-radius: 2px;
-        background: linear-gradient(180deg, rgba(24,209,253,1) 0%, rgba(27,150,246,1) 100%);
-      }
-      .title {
-        padding-left: px(15);
-        white-space: nowrap;
-      }
-      .quantity {
-        padding-top: px(10);
-        padding-left: px(30);
-        text-align: left;
-        font-size: px(36);
-        font-weight: 700;
-      }
-    }
-    .chart {
-      grid-area: box3;
     }
   }
 }

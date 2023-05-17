@@ -1,57 +1,81 @@
 import { useEffect, useRef } from 'react';
 import * as echarts from 'echarts';
+import Part from './part'
+import TotalItem from './total-item'
 import { withEchartsOptions, px } from '../utils/echarts';
 
-const getChartOptions: () => echarts.EChartsCoreOption = () => ({
-  xAxis: {
-    data: ['山东', '河北', '陕西', '河南', '北京', '上海', '深圳', '广东', '杭州'],
-    axisTick: {
+const getChartOptions: () => echarts.EChartsCoreOption = () => {
+  const width = px(20)
+  return {
+    xAxis: {
       show: false
     },
-    axisLine: {
-      show: false,
-      // lineStyle: {
-      //   color: '#083B70'
-      // }
+    yAxis: {
+      show: false
     },
-    axisLabel: {
-      formatter(val: string) {
-        if (val.length > 2) {
-          const array = val.split('');
-          array.splice(2, 0, '\n');
-          return array.join('');
-        } else {
-          return val;
-        }
+    series: [
+      {
+        type: 'gauge',
+        axisLine: {
+          lineStyle: {
+            width: width,
+            color: [
+              [0.3, '#67e0e3'],
+              [0.7, '#37a2da'],
+              [1, '#fd666d']
+            ]
+          }
+        },
+        pointer: {
+          itemStyle: {
+            color: 'inherit'
+          }
+        },
+        axisTick: {
+          distance: -1 * width,
+          length: 8,
+          lineStyle: {
+            color: '#070a0f',
+            width: 2
+          }
+        },
+        splitLine: {
+          distance: -1 * width,
+          length: width,
+          lineStyle: {
+            color: '#070a0f',
+            width: 4
+          }
+        },
+        axisLabel: {
+          color: 'inherit',
+          distance: px(30),
+          fontSize: px(16)
+        },
+        detail: {
+          fontSize: px(18),
+          valueAnimation: true,
+          formatter: '{value}%',
+          color: 'inherit',
+          offsetCenter: [0, px(70)]
+        },
+        title: {
+          color: '#fff',
+          fontSize: px(16),
+          // fontWeight: 800,
+          // fontFamily: 'Arial',
+          offsetCenter: [0, px(40)]
+        },
+        data: [
+          {
+            value: 50,
+            name: '可用率'
+          }
+        ]
       }
-    },
-  },
-  yAxis: {
-    show: false,
-    boundaryGap: false,
-  },
-  series: [
-    {
-      type: 'bar',
-      barWidth: px(15),
-      data: [20, 12, 42, 35, 16, 36, 22, 28, 16],
-      itemStyle: {
-        normal: {
-          barBorderRadius: [px(7.5), px(7.5), px(7.5), px(7.5)]
-        }
-      },
-      color: new echarts.graphic.LinearGradient(0, 0, 0, 1, [
-        {
-          offset: 0,
-          color: '#18d1fd'
-        }, {
-          offset: 1,
-          color: '#1b96f6'
-        }
-      ]),
-    }
-  ]
-})
+    ]
+  }
+}
 
 const Chart1 = () => {
   const divRef = useRef<HTMLDivElement>(null);
@@ -64,8 +88,17 @@ const Chart1 = () => {
   }, []);
 
   return (
-    <div ref={divRef} className="chart"></div>
-  );
-};
+    <Part className="section1 left">
+      <h2 className="part-title">{'分布区域统计'}</h2>
+      <div className="part-content">
+        <div className="total">
+          <TotalItem title="预算执行情况（万元）" total={5563} />
+          <TotalItem title="本月运维费用（万元）" total={489} />
+        </div>
+        <div ref={divRef} className="chart"></div>
+      </div>
+    </Part>
+  )
+}
 
 export default Chart1

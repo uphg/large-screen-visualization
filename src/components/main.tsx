@@ -1,37 +1,26 @@
 import Chart1 from './chart-1'
+import Chart2 from './chart-2'
+import Chart3 from './chart-3'
+import Chart4 from './chart-4'
+import Chart5 from './chart-5'
+import Chart6 from './chart-6'
+import Chart7 from './chart-7'
+import Chart8 from './chart-8'
+import Chart9 from './chart-9'
 import Part from './part'
 
 const Main = () => {
   return (
     <main className="app-main">
-      <Part className="section1 distribution">
-        <h2 className="part-title">{'分布区域统计'}</h2>
-        <div className="total">
-          <div className="total-item">
-            <div className="total-header">
-              <div className="square"></div>
-              <div className="title">listed company</div>
-            </div>
-            <div className="quantity">2033</div>
-          </div>
-          <div className="total-item">
-            <div className="total-header">
-              <div className="square"></div>
-              <div className="title">listed company</div>
-            </div>
-            <div className="quantity">1032</div>
-          </div>
-        </div>
-        <Chart1 />
-      </Part>
-      <Part className="section2"></Part>
-      <Part className="section3"></Part>
-      <Part className="section4"></Part>
-      <Part className="section5"></Part>
-      <Part className="section6"></Part>
-      <Part className="section7"></Part>
-      <Part className="section8"></Part>
-      <Part className="section9"></Part>
+      <Chart1 />
+      <Chart2 />
+      <Chart3 />
+      <Chart4 />
+      <Chart5 />
+      <Chart6 />
+      <Chart7 />
+      <Chart8 />
+      <Chart9 />
     </main>
   )
 }
