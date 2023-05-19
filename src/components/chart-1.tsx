@@ -89,7 +89,7 @@ const Chart1 = () => {
 
   return (
     <Part className="section1 left">
-      <h2 className="part-title">{'分布区域统计'}</h2>
+      <h2 className="part-title">{'业务平均可用率'}</h2>
       <div className="part-content">
         <div className="total">
           <TotalItem title="预算执行情况（万元）" total={5563} />

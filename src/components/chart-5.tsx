@@ -3,9 +3,10 @@ import * as echarts from 'echarts';
 import Part from './part'
 import { withEchartsOptions, px } from '../utils/echarts';
 
-const colors = ['#856BED', '#F46064', '#F38E1C', '#1CDB7C', '#33A4FA'];
+const colors = ['#8457ee', '#fe6464', '#fdd02c', '#4ced90', '#3185ff'];
 
 const getChartOptions: () => echarts.EChartsCoreOption = () => ({
+  color: colors,
   xAxis: {
     show: false
   },
@@ -14,16 +15,13 @@ const getChartOptions: () => echarts.EChartsCoreOption = () => ({
   },
   legend: {
     show: false
-    // top: '0',
-    // left: 'center',
-    // itemGap: px(20)
   },
   series: [
     {
       name: 'Access From',
       type: 'pie',
-      radius: ['50%', '80%'],
-      avoidLabelOverlap: false,
+      radius: ['65%', '80%'],
+      // avoidLabelOverlap: false,
       itemStyle: {
         borderRadius: 10,
         borderColor: '#00000000',
@@ -31,12 +29,14 @@ const getChartOptions: () => echarts.EChartsCoreOption = () => ({
       },
       label: {
         show: false,
-        position: 'center'
+        position: 'center',
+        color: '#FFF',
+        // fontSize: px(40)
       },
       emphasis: {
         label: {
           show: true,
-          fontSize: px(20),
+          fontSize: px(28),
           fontWeight: 'bold'
         }
       },
@@ -44,11 +44,11 @@ const getChartOptions: () => echarts.EChartsCoreOption = () => ({
         show: false
       },
       data: [
-        { value: 1048, name: 'Search Engine' },
-        { value: 735, name: 'Direct' },
-        { value: 580, name: 'Email' },
-        { value: 484, name: 'Union Ads' },
-        { value: 300, name: 'Video Ads' }
+        { value: 1048, name: '合肥市 35%' },
+        { value: 735, name: '滁州市 25%' },
+        { value: 580, name: '六安市 20%' },
+        { value: 484, name: '安庆市 15%' },
+        { value: 300, name: '池州市 5%' }
       ]
     }
   ]
@@ -66,7 +66,7 @@ const Chart5 = () => {
 
   return (
     <Part className="section5 left">
-      <h2 className="part-title">{'省市电量增长率'}</h2>
+      <h2 className="part-title">{'各区电量分布占比'}</h2>
       <div className="part-content">
         <div ref={divRef} className="chart" style={{ height: `calc(100% - ${px(30 + 32)})` }}></div>
       </div>

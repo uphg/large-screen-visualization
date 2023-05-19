@@ -4,50 +4,52 @@ import Part from './part'
 import TotalItem from './total-item'
 import { withEchartsOptions, px } from '../utils/echarts';
 
+const colors = ['#F46064', '#F38E1C', '#1CDB7C', '#8D70F8', '#33A4FA'];
+
 const getChartOptions: () => echarts.EChartsCoreOption = () => ({
+  color: colors,
+  // legend: {
+  //   top: 'bottom'
+  // },
   xAxis: {
-    data: ['山东', '河北', '陕西', '河南', '北京', '上海', '深圳', '广东', '杭州'],
-    axisTick: {
-      show: false
-    },
-    axisLine: {
-      show: false
-    },
-    axisLabel: {
-      formatter(val: string) {
-        if (val.length > 2) {
-          const array = val.split('');
-          array.splice(2, 0, '\n');
-          return array.join('');
-        } else {
-          return val;
-        }
-      }
-    },
+    show: false
   },
   yAxis: {
-    show: false,
-    boundaryGap: false,
+    show: false
+  },
+  // toolbox: {
+  //   show: true,
+  //   feature: {
+  //     mark: { show: true },
+  //     dataView: { show: true, readOnly: false },
+  //     restore: { show: true },
+  //     saveAsImage: { show: true }
+  //   }
+  // },
+  grid: {
+    top: 0,
+    bottom: px(32)
   },
   series: [
     {
-      type: 'bar',
-      barWidth: px(15),
-      data: [20, 12, 42, 35, 16, 36, 22, 28, 16],
-      itemStyle: {
-        normal: {
-          barBorderRadius: [px(7.5), px(7.5), px(7.5), px(7.5)]
-        }
+      name: 'Nightingale Chart',
+      type: 'pie',
+      radius: ['20%', '60%'],
+      // center: ['50%', '50%'],
+      label: {
+        color: 'rgba(255, 255, 255, 0.7)'
       },
-      color: new echarts.graphic.LinearGradient(0, 0, 0, 1, [
-        {
-          offset: 0,
-          color: '#18d1fd'
-        }, {
-          offset: 1,
-          color: '#1b96f6'
-        }
-      ]),
+      roseType: 'area',
+      itemStyle: {
+        borderRadius: 8,
+      },
+      data: [
+        { value: 40, name: 'rose 1' },
+        { value: 38, name: 'rose 2' },
+        { value: 32, name: 'rose 3' },
+        { value: 30, name: 'rose 4' },
+        { value: 28, name: 'rose 5' },
+      ]
     }
   ]
 })

@@ -70,11 +70,11 @@ const Chart2 = () => {
 
   return (
     <Part className="section2 left">
-      <h2 className="part-title">{'接受区外来电'}</h2>
+      <h2 className="part-title">{'用电及区外来电'}</h2>
       <div className="part-content">
         <div className="total">
-          <TotalItem title="预算执行情况（万元）" total={5563} />
-          <TotalItem title="本月运维费用（万元）" total={489} />
+          <TotalItem title="本月全网最高用电负荷" total="5563万千瓦" />
+          <TotalItem title="本月社会用电量" total="1236亿万千瓦" />
         </div>
         <div ref={divRef} className="chart"></div>
       </div>

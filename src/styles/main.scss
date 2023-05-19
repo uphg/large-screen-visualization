@@ -28,6 +28,10 @@ $part-border-size: 1px;
   }
   > .section4 {
     grid-area: box4;
+    .chart {
+      margin-top: px(-40);
+      margin-bottom: px(-40);
+    }
   }
   > .section5 {
     grid-area: box5;
@@ -112,7 +116,8 @@ $part-border-size: 1px;
       padding-top: px(10);
       padding-left: px(30);
       text-align: left;
-      font-size: px(36);
+      // font-size: px(36);
+      font-size: px(24);
       font-weight: 700;
     }
   }
