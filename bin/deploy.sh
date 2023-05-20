@@ -14,6 +14,4 @@ git commit -m 'update'
 git push -f git@github.com:uphg/large-screen-visualization.git master:gh-pages
 # git push -f git@gitee.com:uphg/uphg.git master:gh-pages
 
-rm -rf .git
-
 cd -
