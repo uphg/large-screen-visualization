@@ -70,7 +70,7 @@ const Chart3 = () => {
 
   return (
     <Part className="section3 left">
-      <h2 className="part-title">{'科技发展'}</h2>
+      <h2 className="part-title">{'售电量及增长率'}</h2>
       <div className="part-content">
         <div className="total">
           <TotalItem title="六安年度累计输送电量" total={686} />

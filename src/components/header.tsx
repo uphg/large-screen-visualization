@@ -3,7 +3,7 @@ const Header = () => {
     <header className="app-header">
       <div className="header-left"></div>
       <div className="header-content">
-        <h2 className="title">国家电网华东分布</h2>
+        <h2 className="title">国家电网安徽省分布</h2>
         <div className="triangle-wrap left">
           <div className="triangle-left"></div>
           <div className="sub-triangle-wrap left">

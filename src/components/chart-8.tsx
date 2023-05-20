@@ -6,7 +6,7 @@ import { withEchartsOptions, px } from '../utils/echarts';
 
 const getChartOptions: () => echarts.EChartsCoreOption = () => ({
   xAxis: {
-    data: ['山东', '河北', '陕西', '河南', '北京', '上海', '深圳', '广东', '杭州'],
+    data: ['合肥', '淮北', '亳州', '宿州', '蚌埠', '阜阳', '淮南', '滁州', '六安'],
     axisTick: {
       show: false
     },
@@ -64,11 +64,11 @@ const Chart8 = () => {
 
   return (
     <Part className="section8 right">
-      <h2 className="part-title">{'分布区域统计'}</h2>
+      <h2 className="part-title">{'电网可靠性'}</h2>
       <div className="part-content">
         <div className="total">
-          <TotalItem title="预算执行情况（万元）" total={5563} />
-          <TotalItem title="本月运维费用（万元）" total={489} />
+          <TotalItem title="本月100KV线路跳闸次" total="0次"/>
+          <TotalItem title="500KV系统设备跳闸事件数" total="1起" />
         </div>
         <div ref={divRef} className="chart"></div>
       </div>

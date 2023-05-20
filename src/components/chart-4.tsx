@@ -161,7 +161,7 @@ const Chart4 = () => {
 
   return (
     <Part className="section4 left">
-      <div className="part-title" style={{ justifyContent: 'center' }}>安徽市运营关键指标</div>
+      <div className="part-title" style={{ justifyContent: 'center' }}>安徽省运营关键指标</div>
       <div className="part-content">
         <div ref={divRef} className="chart"></div>
       </div>

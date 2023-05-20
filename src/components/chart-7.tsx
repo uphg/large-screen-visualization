@@ -8,24 +8,12 @@ const colors = ['#F46064', '#F38E1C', '#1CDB7C', '#8D70F8', '#33A4FA'];
 
 const getChartOptions: () => echarts.EChartsCoreOption = () => ({
   color: colors,
-  // legend: {
-  //   top: 'bottom'
-  // },
   xAxis: {
     show: false
   },
   yAxis: {
     show: false
   },
-  // toolbox: {
-  //   show: true,
-  //   feature: {
-  //     mark: { show: true },
-  //     dataView: { show: true, readOnly: false },
-  //     restore: { show: true },
-  //     saveAsImage: { show: true }
-  //   }
-  // },
   grid: {
     top: 0,
     bottom: px(32)
@@ -44,11 +32,11 @@ const getChartOptions: () => echarts.EChartsCoreOption = () => ({
         borderRadius: 8,
       },
       data: [
-        { value: 40, name: 'rose 1' },
-        { value: 38, name: 'rose 2' },
-        { value: 32, name: 'rose 3' },
-        { value: 30, name: 'rose 4' },
-        { value: 28, name: 'rose 5' },
+        { value: 40, name: '合肥市' },
+        { value: 38, name: '芜湖市' },
+        { value: 32, name: '六安市' },
+        { value: 28, name: '滁州市' },
+        { value: 15, name: '池州市' },
       ]
     }
   ]
@@ -66,11 +54,11 @@ const Chart7 = () => {
 
   return (
     <Part className="section7 right">
-      <h2 className="part-title">{'分布区域统计'}</h2>
+      <h2 className="part-title">{'售电及电损'}</h2>
       <div className="part-content">
         <div className="total">
-          <TotalItem title="预算执行情况（万元）" total={5563} />
-          <TotalItem title="本月运维费用（万元）" total={489} />
+          <TotalItem title="本年国网计划售电量" total="18956万千瓦" />
+          <TotalItem title="本月全网售电量" total="10634万千瓦" />
         </div>
         <div ref={divRef} className="chart"></div>
       </div>

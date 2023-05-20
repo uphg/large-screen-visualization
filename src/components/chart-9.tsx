@@ -5,7 +5,6 @@ import TotalItem from './total-item'
 import { withEchartsOptions, px } from '../utils/echarts';
 
 const getChartOptions: () => echarts.EChartsCoreOption = () => ({
-  // backgroundColor: '#161627',
   xAxis: {
     show: false
   },
@@ -14,19 +13,17 @@ const getChartOptions: () => echarts.EChartsCoreOption = () => ({
   },
   radar: {
     indicator: [
-      { name: 'Sales', max: 6500 },
-      { name: 'Administration', max: 16000 },
-      { name: 'Information Technology', max: 30000 },
-      { name: 'Customer Support', max: 38000 },
-      { name: 'Development', max: 52000 },
-      { name: 'Marketing', max: 25000 }
+      { name: 'PM 2.5', max: 6500 },
+      { name: 'PM 10', max: 16000 },
+      { name: 'CO', max: 30000 },
+      { name: 'NO2', max: 38000 },
+      { name: 'SO2', max: 52000 },
+      { name: 'AQI', max: 25000 }
     ],
     center: ['50%', '50%'],
     radius: 75,
     axisName: {
       color: 'rgb(238, 197, 102)',
-      // backgroundColor: '#666',
-      // borderRadius: 3,
       padding: [0, 0]
     },
     axisLine: {
@@ -78,11 +75,7 @@ const getChartOptions: () => echarts.EChartsCoreOption = () => ({
               }
             ])
           }
-        },
-        // {
-        //   value: [5000, 14000, 28000, 26000, 42000, 21000],
-        //   name: 'Actual Spending'
-        // }
+        }
       ]
     }
   ]
@@ -100,11 +93,11 @@ const Chart9 = () => {
 
   return (
     <Part className="section9 right">
-      <h2 className="part-title">{'分布区域统计'}</h2>
+      <h2 className="part-title">{'信息通讯系统运行'}</h2>
       <div className="part-content">
         <div className="total">
-          <TotalItem title="预算执行情况（万元）" total={5563} />
-          <TotalItem title="本月运维费用（万元）" total={489} />
+          <TotalItem title="累计通信安全运行天数" total="5563天" />
+          <TotalItem title="电力调度业务保障率" total="100%" />
         </div>
         <div ref={divRef} className="chart"></div>
       </div>

@@ -5,12 +5,12 @@ import TotalItem from './total-item'
 import { withEchartsOptions, px } from '../utils/echarts';
 
 const data = [
-  { name: '河北', 2011: 2, },
-  { name: '陕西', 2011: 6, },
-  { name: '河南', 2011: 5, },
-  { name: '北京', 2011: 3, },
-  { name: '上海', 2011: 4, },
-  { name: '深圳', 2011: 3, },
+  { name: '合肥', 2011: 2, },
+  { name: '淮北', 2011: 6, },
+  { name: '亳州', 2011: 5, },
+  { name: '宿州', 2011: 3, },
+  { name: '蚌埠', 2011: 4, },
+  { name: '阜阳', 2011: 3, },
 ];
 
 const getChartOptions: () => echarts.EChartsCoreOption = () => ({

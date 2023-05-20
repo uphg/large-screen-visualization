@@ -3,7 +3,10 @@ import * as echarts from 'echarts';
 import Part from './part'
 import { withEchartsOptions, px } from '../utils/echarts';
 
+const colors = ['#4ced90', '#fdd02c', '#8457ee'];
+
 const getChartOptions: () => echarts.EChartsCoreOption = () => ({
+  color: colors,
   legend: {
     bottom: px(10),
     textStyle: {
@@ -17,7 +20,6 @@ const getChartOptions: () => echarts.EChartsCoreOption = () => ({
     x2: px(32),
     y: px(32),
     y2: px(32),
-    // containLabel: true
   },
   xAxis: {
     type: 'category',
@@ -50,17 +52,17 @@ const getChartOptions: () => echarts.EChartsCoreOption = () => ({
   },
   series: [
     {
-      name: '抢劫',
+      name: '水电',
       type: 'line',
       data: [0.01, 0.02, 0.05, 0.03, 0.05, 0.06, 0.07, 0.08, 0.09]
     },
     {
-      name: '醉驾',
+      name: '火电',
       type: 'line',
       data: [0.02, 0.03, 0.07, 0.08, 0.06, 0.04, 0.08, 0.05, 0.10]
     },
     {
-      name: '盗窃',
+      name: '核电',
       type: 'line',
       data: [0.03, 0.05, 0.04, 0.07, 0.06, 0.08, 0.10, 0.09, 0.11]
     }
@@ -84,7 +86,7 @@ const Chart5 = () => {
 
   return (
     <Part className="section6 left">
-      <h2 className="part-title">{'省市电量增长率'}</h2>
+      <h2 className="part-title">{'电力来源增长率'}</h2>
       <div className="part-content">
         <div ref={divRef} className="chart"></div>
       </div>
